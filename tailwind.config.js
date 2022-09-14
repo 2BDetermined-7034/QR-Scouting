@@ -1,4 +1,4 @@
-// Sus
+// Suss
 
 module.exports = {
   content: [
