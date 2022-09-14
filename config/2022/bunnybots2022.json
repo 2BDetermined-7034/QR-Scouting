@@ -79,7 +79,7 @@
         },
         {
           "code": "au",
-          "title": "Upper Cargo Scored",
+          "title": "Tubes scored",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -87,7 +87,7 @@
         },
         {
           "code": "aum",
-          "title": "Upper Cargo Missed",
+          "title": "Tubes missed",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -95,23 +95,7 @@
         },
         {
           "code": "al",
-          "title": "Lower Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "alm",
-          "title": "Lower Cargo Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "ac",
-          "title": "Picked up more cargo?",
+          "title": "Scored Bunnies",
           "type": "boolean",
           "defaultValue": false,
           "required": false
@@ -123,7 +107,7 @@
       "fields": [
         {
           "code": "tu",
-          "title": "Upper Cargo Scored",
+          "title": "Tubes scored",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -131,23 +115,7 @@
         },
         {
           "code": "tm",
-          "title": "Upper Cargo Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tl",
-          "title": "Lower Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tn",
-          "title": "Lower Cargo Missed",
+          "title": "Tubes missed",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
