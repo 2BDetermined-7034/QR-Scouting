@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { ChangeEvent, useEffect, useState } from 'react'
-import configJson from '../config/2022/RapidReact2022.json'
+//import configJson from '../config/2022/rapidreact2022.json'
 import {
     Config,
     InputProps,
@@ -21,16 +21,18 @@ function buildConfig(c: Config) {
     return config
 }
 
+/*
 function getDefaultConfig(): Config {
     return buildConfig(configJson as Config)
 }
+*/
 
 
 
 export default function Home({configid}:any) {
 
     function getPageConfig(): Config {
-        const config = require("../config/2022/" +  configid + ".json");
+        const config = require("../config/2022/" + configid + ".json");
         return buildConfig(config as Config)
     }
 
