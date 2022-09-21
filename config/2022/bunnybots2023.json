@@ -15,7 +15,7 @@
         },
         {
           "title": "Match Number",
-          "type": "number",
+          "type": "text",
           "required": true,
           "code": "matchNumber"
         },
@@ -36,7 +36,7 @@
         },
         {
           "title": "Team Number",
-          "type": "number",
+          "type": "text",
           "required": true,
           "code": "teamNumber"
         },

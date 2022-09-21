@@ -66,8 +66,12 @@ export default function Home({configid}:any) {
                                 f.value = false
                             }
                         }
-                        if(f.type == "counter" && localStorageValue == null){
-                            f.value = f.min
+                        if(f.type == "counter"){
+                            if(localStorageValue == null){
+                                f.value = 0
+                            } else {
+                                f.value = parseInt(localStorageValue)
+                            }
                         }
                     }))
             })
@@ -114,11 +118,15 @@ export default function Home({configid}:any) {
             .map((s) => s.fields)
             .flat()
             .forEach((f) => {
-                console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
-                f.value = f.defaultValue
+                    if(f.title == "Match Number"){
+                        f.value = 100
+                    }
+                    console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
+                    f.value = f.defaultValue
             })
 
         setFormData(currentData)
+        localStorage.clear();
     }
 
     function getQRCodeData(): string {

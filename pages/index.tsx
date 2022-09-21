@@ -70,7 +70,7 @@ export default function Home() {
     const currentData = { ...formData }
 
     currentData.sections
-      .filter((s) => !s.preserveDataOnReset)
+      //.filter((s) => !s.preserveDataOnReset)
       .map((s) => s.fields)
       .flat()
       .forEach((f) => {
