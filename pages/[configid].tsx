@@ -55,7 +55,12 @@ export default function Home({configid}:any) {
                 console.log(s)
                 s.fields.flat()
                     .forEach((f => {
-                        let localStorageValue = localStorage.getItem("7034QRScout-" + s.name + "-" + f.code)
+                        let localStorageValue
+                        if(s.preserveDataOnReset == true){
+                            localStorageValue = localStorage.getItem("PRESERVE-" + configid + "-" + s.name + "-" + f.code)
+                        } else {
+                            localStorageValue = localStorage.getItem(configid + "-" + s.name + "-" + f.code)
+                        }
                         console.log(s.name + "-" + f.code)
                         console.log(localStorageValue)
                         f.value = localStorageValue
@@ -87,8 +92,12 @@ export default function Home({configid}:any) {
             if (field) {
                 field.value = data
             }
+            if(section.preserveDataOnReset == true){
+                localStorage.setItem("PRESERVE-" + configid + "-" + sectionName + "-" + code, data)
+            } else {
+                localStorage.setItem(configid + "-" + sectionName + "-" + code, data)
+            }
         }
-        localStorage.setItem("7034QRScout-" + sectionName + "-" + code, data)
         setFormData(currentData)
     }
 
@@ -126,7 +135,20 @@ export default function Home({configid}:any) {
             })
 
         setFormData(currentData)
-        localStorage.clear();
+        var arr = []; // Array to hold the keys
+            // Iterate over localStorage and insert the keys that meet the condition into arr
+        for (var i = 0; i < localStorage.length; i++){
+            // @ts-ignore
+            if (localStorage.key(i).split("-")[0] == configid) {
+                arr.push(localStorage.key(i));
+            }
+        }
+
+        // Iterate over arr and remove the items by key
+        for (var i = 0; i < arr.length; i++) {
+            // @ts-ignore
+            localStorage.removeItem(arr[i]);
+        }
     }
 
     function getQRCodeData(): string {
