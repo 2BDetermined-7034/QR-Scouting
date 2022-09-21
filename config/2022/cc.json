@@ -1,0 +1,111 @@
+{
+  "$schema": "../schema.json",
+  "title": "QRScout",
+  "page_title": "Rapid React",
+  "sections": [
+    {
+      "name": "Prematch",
+      "preserveDataOnReset": true,
+      "fields": [
+        {
+          "title": "Scouter Initials",
+          "type": "text",
+          "required": true,
+          "code": "scouter"
+        },
+        {
+          "title": "Match Number",
+          "type": "number",
+          "required": true,
+          "code": "matchNumber"
+        },
+        {
+          "title": "Robot",
+          "type": "select",
+          "required": true,
+          "code": "robot",
+          "choices": {
+            "r1": "Red 1",
+            "b1": "Blue 1",
+            "r2": "Red 2",
+            "b2": "Blue 2",
+            "r3": "Red 3",
+            "b3": "Blue 3"
+          },
+          "defaultValue": "r1"
+        },
+        {
+          "title": "Team Number",
+          "type": "number",
+          "required": true,
+          "code": "teamNumber"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "fields": [
+        {
+          "title": "Starting Side",
+          "type": "select",
+          "choices": {
+            "hangar": "Hangar",
+            "terminal": "Terminal"
+          },
+          "required": false,
+          "code": "autoStart"
+        },
+        {
+          "code": "au",
+          "title": "Upper Cargo Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "al",
+          "title": "Lower Cargo Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "fields": [
+        {
+          "code": "tu",
+          "title": "Upper Cargo Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tl",
+          "title": "Lower Cargo Scored",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Postmatch",
+      "fields": [
+        {
+          "code": "co",
+          "title": "Comments",
+          "type": "text",
+          "min": 0,
+          "max": 50,
+          "required": false
+        }
+      ]
+    }
+  ]
+}
