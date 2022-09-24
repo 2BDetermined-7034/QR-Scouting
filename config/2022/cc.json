@@ -101,6 +101,7 @@
           "code": "co",
           "title": "Comments",
           "type": "text",
+          "defaultValue": "",
           "min": 0,
           "max": 50,
           "required": false
