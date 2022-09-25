@@ -31,8 +31,7 @@
             "b2": "Blue 2",
             "r3": "Red 3",
             "b3": "Blue 3"
-          },
-          "defaultValue": "r1"
+          }
         },
         {
           "title": "Team Number",
@@ -52,6 +51,7 @@
             "hangar": "Hangar",
             "terminal": "Terminal"
           },
+          "defaultValue": "hangar",
           "required": false,
           "code": "autoStart"
         },
@@ -101,7 +101,7 @@
           "code": "co",
           "title": "Comments",
           "type": "text",
-          "defaultValue": "",
+          "defaultValue": " ",
           "min": 0,
           "max": 50,
           "required": false

@@ -124,17 +124,32 @@ export default function Home({configid}:any) {
     function resetSections() {
         const currentData = { ...formData }
 
+        // This part works but doesn't allow for me to change the match number specifically
+        // Right now I'm doing a jank thing where I make it so that defaultValue has no value, seems to fix it.
         currentData.sections
             .filter((s) => !s.preserveDataOnReset)
             .map((s) => s.fields)
             .flat()
             .forEach((f) => {
-                    if(f.title == "Match Number"){
-                        f.value = 100
-                    }
                     console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
                     f.value = f.defaultValue
             })
+
+        //wtf is this it doesn't even work
+        // Okay I made it work now but it's still MEGA JANK ASF
+        // We'll probs be revamping the entire scouting site when we get back so it's totally fine right?
+        currentData.sections
+            .filter((s) => s.preserveDataOnReset)
+            .map((s) => s.fields)
+            .flat()
+            .forEach((f) => {
+                if(f.title == "Match Number"){
+                    console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
+                    f.value = parseInt(f.value) + 1
+                    localStorage.setItem(configid + "-" + "Prematch" + "-" + f.code, f.value)
+                }
+            })
+
 
         setFormData(currentData)
         var arr = []; // Array to hold the keys
