@@ -56,6 +56,13 @@
           "code": "autoStart"
         },
         {
+          "code": "at",
+          "title": "Taxied?",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
           "code": "au",
           "title": "Upper Cargo Scored",
           "type": "counter",
@@ -90,6 +97,40 @@
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "fields": [
+        {
+          "code": "c",
+          "title": "Climb",
+          "type": "select",
+          "choices": {
+            "1": "Low",
+            "2": "Mid",
+            "3": "High",
+            "4": "Traversal",
+            "f": "Attempted but Failed",
+            "x": "Not Attempted"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "be",
+          "title": "Started climb before EndGame",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "cn",
+          "title": "# of alliance bots climbed",
+          "type": "counter",
+          "defaultValue": 0,
           "required": false
         }
       ]

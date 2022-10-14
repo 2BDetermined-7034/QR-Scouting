@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { ChangeEvent, useEffect, useState } from 'react'
-import configJson from '../config/2022/cc.json'
+import configJson from '../config/2022/rapidreact2022.json'
+import Link from 'next/link'
 import {
   Config,
   InputProps,
@@ -128,89 +129,33 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen py-2">
-      <Head>
-        <title>{formData.title}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      // Show a single message showing all the config schemas
+        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+            <Head>
+                <title>QR Scout</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-4 text-center">
-        <h1 className="font-sans text-6xl font-bold">
-          <div className="text-green-700">{formData.page_title}</div>
-        </h1>
-        <QRModal
-          show={showQR}
-          title={`${getFieldValue('robot')} - ${getFieldValue('matchNumber')}`}
-          data={getQRCodeData()}
-          onDismiss={() => setShowQR(false)}
-        />
-
-        <form>
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            {formData.sections.map((section) => {
-              return (
-                <Section
-                  key={section.name}
-                  name={section.name}
-                  inputs={section.fields}
-                  onValueChanged={updateValue}
-                />
-              )
-            })}
-
-            <div className="mb-4 flex flex-col justify-center rounded bg-white shadow-md">
-              <button
-                className="focus:shadow-outline mx-2 rounded bg-gray-700 py-6 px-6 font-bold uppercase text-white hover:bg-gray-700 focus:shadow-lg focus:outline-none disabled:bg-gray-300"
-                type="button"
-                onClick={() => setShowQR(true)}
-                disabled={getMissingRequiredFields().length > 0}
-              >
-                Commit
-              </button>
-              <button
-                className="focus:shadow-outline mx-2 my-6 rounded border border-green-700 bg-white py-2 font-bold text-green-700 hover:bg--green-400 focus:outline-none"
-                type="button"
-                onClick={() => resetSections()}
-              >
-                Reset
-              </button>
+            <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+                <h1 className="text-3xl font-bold">
+                    Here are the available schemas (just add /schema-name to the URL or just click them)
+                </h1>
+              <h1 className="text-3xl font-bold">
+                I probably broke something while making this page
+              </h1>
+            </main>
+            <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+                <h1 className="text-3xl">
+                  <Link href="/rapidreact2022">rapidreact2022</Link>
+                </h1>
+              <h1 className="text-3xl">
+                <Link href="/cc">cc</Link>
+              </h1>
+              <h1 className="text-3xl">
+                <Link href="/bunnybots2023">bunnybots2023</Link>
+              </h1>
             </div>
-            <div className="mb-4 flex flex-col justify-center rounded bg-white shadow-md">
-              <Button
-                variant={Variant.Secondary}
-                className="m-2"
-                onClick={() =>
-                  navigator.clipboard.writeText(
-                    formData.sections
-                      .map((s) => s.fields)
-                      .flat()
-                      .map((f) => f.title)
-                      .join('\t')
-                  )
-                }
-              >
-                Copy Column Names
-              </Button>
-              <Button
-                variant={Variant.Secondary}
-                className="m-2"
-                onClick={() => downloadConfig()}
-              >
-                Download Config
-              </Button>
-              <label className="m-2 flex cursor-pointer flex-row justify-center rounded border bg-gray-500 py-2 text-center font-bold text-white hover:bg-gray-600">
-                <span className="text-base leading-normal">Upload Config</span>
-                <input
-                  type="file"
-                  className="hidden"
-                  accept=".json"
-                  onChange={(e) => handleFileChange(e)}
-                />
-              </label>
-            </div>
-          </div>
-        </form>
-      </main>
-    </div>
+
+        </div>
   )
 }
