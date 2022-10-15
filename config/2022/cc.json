@@ -118,20 +118,6 @@
           },
           "defaultValue": "x",
           "required": false
-        },
-        {
-          "code": "be",
-          "title": "Started climb before EndGame",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "cn",
-          "title": "# of alliance bots climbed",
-          "type": "counter",
-          "defaultValue": 0,
-          "required": false
         }
       ]
     },
