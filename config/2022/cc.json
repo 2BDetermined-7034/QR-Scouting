@@ -45,17 +45,6 @@
       "name": "Autonomous",
       "fields": [
         {
-          "title": "Starting Side",
-          "type": "select",
-          "choices": {
-            "hangar": "Hangar",
-            "terminal": "Terminal"
-          },
-          "defaultValue": "hangar",
-          "required": false,
-          "code": "autoStart"
-        },
-        {
           "code": "at",
           "title": "Taxied?",
           "type": "boolean",
