@@ -146,13 +146,16 @@ export default function Home() {
             </main>
             <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
                 <h1 className="text-3xl">
-                  <Link href="/rapidreact2022">rapidreact2022</Link>
+                  <Link href="/rapidreact2022">Rapid React 2022</Link>
                 </h1>
               <h1 className="text-3xl">
-                <Link href="/cc">cc</Link>
+                <Link href="/cc">Chezy Champs 2022</Link>
               </h1>
               <h1 className="text-3xl">
-                <Link href="/bunnybots2023">bunnybots2023</Link>
+                <Link href="/bunnybots2023">Bunny Bots 2023</Link>
+              </h1>
+              <h1 className="text-3xl">
+                <Link href="/chargedup2023">Charged Up 2023</Link>
               </h1>
             </div>
 
