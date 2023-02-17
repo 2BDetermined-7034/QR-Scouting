@@ -1,0 +1,173 @@
+{
+  "$schema": "../schema.json",
+  "title": "QR Scouting",
+  "page_title": "Charged Up",
+  "sections": [
+    {
+      "name": "Prematch",
+      "preserveDataOnReset": true,
+      "fields": [
+        {
+          "title": "Scouter Initials",
+          "type": "text",
+          "required": true,
+          "code": "scouter"
+        },
+        {
+          "title": "Match Number",
+          "type": "text",
+          "required": true,
+          "code": "matchNumber"
+        },
+        {
+          "title": "Robot",
+          "type": "select",
+          "required": false,
+          "code": "robot",
+          "choices": {
+            "r1": "Red 1",
+            "b1": "Blue 1",
+            "r2": "Red 2",
+            "b2": "Blue 2",
+            "r3": "Red 3",
+            "b3": "Blue 3"
+          }
+        },
+        {
+          "title": "Team Number",
+          "type": "text",
+          "required": true,
+          "code": "teamNumber"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "fields": [
+        {
+          "title": "Starting Location",
+          "type": "select",
+          "choices": {
+            "loading": "Loading Side",
+            "middle": "Middle",
+            "wall": "Wall Side"
+          },
+          "required": false,
+          "code": "as"
+        },
+        {
+          "code": "am",
+          "title": "Mobility Point?",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "au",
+          "title": "Pieces Scored in Upper",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "ami",
+          "title": "Pieces Scored in Middle",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "al",
+          "title": "Pieces Scored in Low",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "ac",
+          "title": "Auto Charging Station",
+          "type": "select",
+          "choices": {
+            "na": "Not Attempted",
+            "docked": "Docked",
+            "engaged": "Engaged",
+            "fail": "Attempted but Failed"
+          },
+          "defaultValue": "na",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop",
+      "fields": [
+        {
+          "code": "tu",
+          "title": "Pieces Scored in Upper",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tmi",
+          "title": "Pieces Scored in Middle",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tl",
+          "title": "Pieces Scored in Low",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Endgame",
+      "fields": [
+        {
+          "code": "c",
+          "title": "Charging Station",
+          "type": "select",
+          "choices": {
+            "na": "Not Attempted",
+            "docked": "Docked",
+            "engaged": "Engaged",
+            "fail": "Attempted but Failed"
+          },
+          "defaultValue": "na",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Postmatch",
+      "fields": [
+        {
+          "code": "cocs",
+          "title": "Cycled Over the Charging Station?",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "co",
+          "title": "Comments",
+          "type": "text",
+          "defaultValue": " ",
+          "min": 0,
+          "max": 50,
+          "required": true
+        }
+      ]
+    }
+  ]
+}
