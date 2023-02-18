@@ -159,6 +159,19 @@
           "required": false
         },
         {
+          "code": "p",
+          "title": "Piece Type Scored",
+          "type": "select",
+          "choices": {
+            "na": "None",
+            "cones": "Cones",
+            "cubes": "Cubes",
+            "both": "Both"
+          },
+          "defaultValue": "na",
+          "required": false
+        },
+        {
           "code": "co",
           "title": "Comments",
           "type": "text",
