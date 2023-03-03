@@ -169,11 +169,14 @@ export default function Home({configid}:any) {
     }
 
     function getQRCodeData(): string {
-        return formData.sections
+        let flat = formData.sections
             .map((s) => s.fields)
             .flat()
-            .map((v) => `${v.value}`)
-            .join('\t')
+            .map((v) => {
+                return v.value ?? v.defaultValue
+            })
+
+        return flat.join("\t");
     }
 
     function download(filename: string, text: string) {

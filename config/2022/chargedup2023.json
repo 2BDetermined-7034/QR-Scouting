@@ -24,6 +24,7 @@
           "type": "select",
           "required": false,
           "code": "robot",
+          "defaultValue": "r1",
           "choices": {
             "r1": "Red 1",
             "b1": "Blue 1",
@@ -52,6 +53,7 @@
             "middle": "Middle",
             "wall": "Wall Side"
           },
+          "defaultValue": "loading",
           "required": false,
           "code": "as"
         },
@@ -181,7 +183,7 @@
           "code": "co",
           "title": "Comments",
           "type": "text",
-          "defaultValue": " ",
+          "defaultValue": "",
           "min": 0,
           "max": 50,
           "required": true
