@@ -169,14 +169,26 @@ export default function Home({configid}:any) {
     }
 
     function getQRCodeData(): string {
+        function thing(value : any, defaultValue : any){
+            if(typeof(value) === "undefined"){
+                return defaultValue;
+            }
+            return value;
+        }
+
         let flat = formData.sections
             .map((s) => s.fields)
             .flat()
-            .map((v) => {
-                return v.value ?? v.defaultValue
+            .map((v, dnc, array) => {
+                v.value = v.value ?? v.defaultValue
+                return v.value
             })
 
-        return flat.join("\t");
+        console.log("test" + flat.join("\t"));
+
+        return flat.join("\t")
+            .replace("\r", "");
+
     }
 
     function download(filename: string, text: string) {
