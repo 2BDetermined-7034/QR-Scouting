@@ -157,6 +157,9 @@ export default function Home() {
               <h1 className="text-3xl">
                 <Link href="/chargedup2023">Charged Up 2023</Link>
               </h1>
+              <h1 className="text-3xl">
+                <Link href="/crescendo2024">Crescendo 2024</Link>
+              </h1>
             </div>
 
         </div>
