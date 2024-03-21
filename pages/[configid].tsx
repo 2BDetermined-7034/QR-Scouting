@@ -54,7 +54,7 @@ export default function Home({configid}:any) {
 
         currentData.sections
             .forEach((s) => {
-                console.log(s)
+                // console.log(s)
                 s.fields.flat()
                     .forEach((f => {
                         let localStorageValue
@@ -63,8 +63,8 @@ export default function Home({configid}:any) {
                         } else {
                             localStorageValue = localStorage.getItem(configid + "-" + s.name + "-" + f.code)
                         }
-                        console.log(s.name + "-" + f.code)
-                        console.log(localStorageValue)
+                        // console.log(s.name + "-" + f.code)
+                        // console.log(localStorageValue)
                         f.value = localStorageValue
                         if(f.type == "boolean"){
                             if(localStorageValue == "true"){
@@ -131,7 +131,7 @@ export default function Home({configid}:any) {
             .map((s) => s.fields)
             .flat()
             .forEach((f) => {
-                    console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
+                    // console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
                     f.value = f.defaultValue
             })
 
@@ -144,7 +144,7 @@ export default function Home({configid}:any) {
             .flat()
             .forEach((f) => {
                 if(f.title == "Match Number"){
-                    console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
+                    // console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
                     f.value = parseInt(f.value) + 1
                     localStorage.setItem(configid + "-" + "Prematch" + "-" + f.code, f.value)
                 }
@@ -184,7 +184,7 @@ export default function Home({configid}:any) {
                 return v.value
             })
 
-        console.log("test" + flat.join("\t"));
+        // console.log("test" + flat.join("\t"));
 
         return flat.join("\t")
             .replace("\r", "");

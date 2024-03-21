@@ -101,6 +101,13 @@
                     "min": 0,
                     "max": 3,
                     "required": false
+                },
+                {
+                    "code": "dd",
+                    "title": "Robot disabled?",
+                    "type": "boolean",
+                    "defaultValue": false,
+                    "required": true
                 }
             ]
         },

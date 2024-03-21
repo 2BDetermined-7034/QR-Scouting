@@ -75,7 +75,7 @@ export default function Home() {
       .map((s) => s.fields)
       .flat()
       .forEach((f) => {
-        console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
+        // console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
         f.value = f.defaultValue
       })
 
